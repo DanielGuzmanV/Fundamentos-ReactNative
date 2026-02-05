@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
 
-export default function TabTwoScreen() {
+export default function IndexScreen() {
   return (
     <ViewCustom style={styles.container}>
-      <TextCustom style={styles.title}>Tab Two</TextCustom>
+      <TextCustom style={styles.title}>Tab One</TextCustom>
     </ViewCustom>
   );
 }

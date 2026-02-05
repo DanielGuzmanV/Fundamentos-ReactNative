@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
 
-export default function TabOneScreen() {
+export default function ApisScreen() {
   return (
     <ViewCustom style={styles.container}>
-      <TextCustom style={styles.title}>Tab One</TextCustom>
+      <TextCustom style={styles.title}>Tab Four</TextCustom>
     </ViewCustom>
   );
 }
