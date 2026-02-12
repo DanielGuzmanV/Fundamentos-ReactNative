@@ -1,23 +1,6 @@
-import { StyleSheet } from 'react-native';
-
-import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
+import { BasicConceptsScreen } from '@/src/features/concepts/screens/BasicConceptsScreen';
 
 export default function BasicScreen() {
-  return (
-    <ViewCustom style={styles.container}>
-      <TextCustom style={styles.title}>Pantalla de conceptos basicos</TextCustom>
-    </ViewCustom>
-  );
+  return (<BasicConceptsScreen/>);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
