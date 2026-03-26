@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
 
-export default function IntermediateScreen() {
+export default function ProjectTwoScreen() {
   return (
     <ViewCustom style={styles.container}>
       <TextCustom style={styles.title}>Pantalla de conceptos intermedios</TextCustom>

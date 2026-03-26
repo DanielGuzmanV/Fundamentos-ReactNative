@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
 
-export default function ApisScreen() {
+export default function SettingsScreen() {
   return (
     <ViewCustom style={styles.container}>
-      <TextCustom style={styles.title}>Tab Four</TextCustom>
+      <TextCustom style={styles.title}>Pantalla para los ajustes</TextCustom>
     </ViewCustom>
   );
 }
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
   },
 });
