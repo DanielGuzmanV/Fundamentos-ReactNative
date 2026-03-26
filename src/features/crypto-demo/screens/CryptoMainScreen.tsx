@@ -1,9 +1,9 @@
 import { ConceptCard } from '@/src/shared/components/ConceptCard';
+import { ConceptHeader } from '@/src/shared/components/ConceptHeader';
 import { useRouter } from 'expo-router';
 import { ScrollView, StyleSheet } from 'react-native';
-import { ConceptHeader } from '../../../../shared/components/ConceptHeader';
 
-export const BasicConceptsScreen = () => {
+export const CryptoMainScreen = () => {
   const router = useRouter();
   
   return (
