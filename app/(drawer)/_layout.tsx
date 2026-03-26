@@ -37,9 +37,9 @@ export default function DrawerLayout() {
         <Drawer.Screen
           name="(tabs)" 
           options={{
-            drawerLabel: 'Demos',
-            title: 'Proyectos demos',
-            drawerIcon: ({ color }) => <Ionicons name="book-outline" size={22} color={color} />,
+            drawerLabel: 'Demos Tecnicas',
+            title: 'Explorar Demos',
+            drawerIcon: ({ color }) => <Ionicons name="flask-outline" size={22} color={color} />,
           }}
         />
 
