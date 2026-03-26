@@ -17,30 +17,22 @@ export default function TabLayout() {
 
       {/* Nivel basico */}
       <Tabs.Screen
-        name="basic"
+        name="projectOne"
         options={{
-          title: 'Basico',
+          title: 'Demo 1',
           tabBarIcon: ({ color }) => <Ionicons name="egg-outline" size={24} color={color} />,
         }}
       />
 
       {/* Nivel intermedio */}
       <Tabs.Screen
-        name="intermediate"
+        name="projectTwo"
         options={{
-          title: 'Intermedio',
+          title: 'Demo 2',
           tabBarIcon: ({ color }) => <Ionicons name="construct-outline" size={24} color={color} />,
         }}
       />
 
-      {/* Nivel avanzado */}
-      <Tabs.Screen
-        name="advanced"
-        options={{
-          title: 'Avanzado',
-          tabBarIcon: ({ color }) => <Ionicons name="rocket-outline" size={24} color={color} />,
-        }}
-      />
     </Tabs>
   );
 }
