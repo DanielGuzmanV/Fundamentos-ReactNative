@@ -1,4 +1,4 @@
-import { LessonSwitcher } from '@/src/features/concepts/screens/basic-concept/LessonSwitcher';
+import { LessonSwitcher } from '@/src/features/crypto-demo/screens/LessonSwitcher';
 import { useLocalSearchParams } from 'expo-router';
 
 export default function LessonRoute() {

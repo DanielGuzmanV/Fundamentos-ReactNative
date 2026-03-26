@@ -1,6 +1,6 @@
-import { BasicConceptsScreen } from '@/src/features/concepts/screens/basic-concept/BasicConceptsScreen';
+import { CryptoMainScreen } from "@/src/features/crypto-demo/screens/CryptoMainScreen";
 
 export default function ProjectOneScreen() {
-  return (<BasicConceptsScreen/>);
+  return (<CryptoMainScreen/>);
 }
 
