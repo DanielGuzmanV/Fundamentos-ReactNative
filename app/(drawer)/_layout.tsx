@@ -13,7 +13,7 @@ export default function DrawerLayout() {
           drawerActiveTintColor: '#007AFF',
         }}
       >
-        {/* 1. Inicio */}
+        {/* Inicio */}
         <Drawer.Screen
           name="index"
           options={{
@@ -23,43 +23,33 @@ export default function DrawerLayout() {
           }}
         />
 
-        {/* 2. Conceptos */}
+        {/* Proyectos completos */}
         <Drawer.Screen
-          name="(tabs)" 
+          name="projectOne" 
           options={{
-            drawerLabel: 'Conceptos',
-            title: 'Aprendizaje',
-            drawerIcon: ({ color }) => <Ionicons name="book-outline" size={22} color={color} />,
-          }}
-        />
-
-        {/* 3. Ejemplos */}
-        <Drawer.Screen
-          name="examples" 
-          options={{
-            drawerLabel: 'Ejemplos',
-            title: 'Código Vivo',
-            drawerIcon: ({ color }) => <Ionicons name="code-working-outline" size={22} color={color} />,
-          }}
-        />
-
-        {/* 4. Pruebas */}
-        <Drawer.Screen
-          name="tests" 
-          options={{
-            drawerLabel: 'Pruebas',
-            title: 'Laboratorio',
+            drawerLabel: 'Proyecto 1',
+            title: 'Primer proyecto',
             drawerIcon: ({ color }) => <Ionicons name="flask-outline" size={22} color={color} />,
           }}
         />
 
-        {/* 5. APIs */}
+        {/* Proyectos demos */}
         <Drawer.Screen
-          name="apis" 
+          name="(tabs)" 
           options={{
-            drawerLabel: 'APIs',
-            title: 'Conexiones Externas',
-            drawerIcon: ({ color }) => <Ionicons name="cloud-upload-outline" size={22} color={color} />,
+            drawerLabel: 'Demos',
+            title: 'Proyectos demos',
+            drawerIcon: ({ color }) => <Ionicons name="book-outline" size={22} color={color} />,
+          }}
+        />
+
+        {/* Ajustes */}
+        <Drawer.Screen
+          name="settings" 
+          options={{
+            drawerLabel: 'Ajustes',
+            title: 'Ajustes',
+            drawerIcon: ({ color }) => <Ionicons name="settings-outline" size={22} color={color} />,
           }}
         />
 
