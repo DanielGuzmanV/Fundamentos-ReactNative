@@ -49,6 +49,7 @@ function RootLayoutNav() {
       <Stack screenOptions={{headerShown: false}}>
         <Stack.Screen name="(auth)" />
         <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+        <Stack.Screen name="flows" options={{headerShown: false}}/>
       </Stack>
     </ThemeProvider>
   );
