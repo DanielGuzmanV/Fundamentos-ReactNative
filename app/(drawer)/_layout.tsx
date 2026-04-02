@@ -35,7 +35,7 @@ export default function DrawerLayout() {
 
         {/* Proyectos demos */}
         <Drawer.Screen
-          name="(tabs)" 
+          name="(tabs-demo)" 
           options={{
             drawerLabel: 'Demos Tecnicas',
             title: 'Explorar Demos',
