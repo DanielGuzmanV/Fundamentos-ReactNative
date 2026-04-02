@@ -10,8 +10,8 @@ export default function FlowsLayout() {
       }}
     >
       <Stack.Screen
-        name="details-basic/[id]"
-        options={{title: 'Leccion'}}
+        name="details-crypto/demo"
+        options={{title: 'Crypto-Dashboard'}}
       />
 
     </Stack>
