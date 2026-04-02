@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
 
-export default function ProjectTwoScreen() {
+export default function AIChatDemoScreen() {
   return (
     <ViewCustom style={styles.container}>
-      <TextCustom style={styles.title}>Pantalla de conceptos intermedios</TextCustom>
+      <TextCustom style={styles.title}>Pantalla de IAChat-Demo</TextCustom>
     </ViewCustom>
   );
 }

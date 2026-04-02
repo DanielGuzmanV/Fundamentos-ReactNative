@@ -4,16 +4,11 @@ import React from 'react';
 
 import Colors from '@/src/constants/Colors';
 import { useColorScheme } from '@/src/core/hooks/useColorScheme';
-import { DrawerActions } from '@react-navigation/native';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   const navigation = useNavigation();
-
-  const onOpenDrawer = () => {
-    navigation.dispatch(DrawerActions.openDrawer())
-  }
 
   return (
     <Tabs
@@ -32,7 +27,7 @@ export default function TabLayout() {
 
       {/* Pantalla Demo 1 */}
       <Tabs.Screen
-        name="projectOne"
+        name="crypto-demo"
         options={{
           title: 'Demo 1',
           tabBarIcon: ({ color }) => <Ionicons name="egg-outline" size={24} color={color} />,
@@ -41,7 +36,7 @@ export default function TabLayout() {
 
       {/* Pantalla demo 2 */}
       <Tabs.Screen
-        name="projectTwo"
+        name="ai-chat-demo"
         options={{
           title: 'Demo 2',
           tabBarIcon: ({ color }) => <Ionicons name="construct-outline" size={24} color={color} />,
