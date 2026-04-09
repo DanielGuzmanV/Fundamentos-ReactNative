@@ -10,7 +10,7 @@ export default function FlowsLayout() {
       }}
     >
       <Stack.Screen
-        name="crypto-app/main-crypto"
+        name="crypto/(tabs)"
         options={{title: 'Crypto-Dashboard'}}
       />
 
