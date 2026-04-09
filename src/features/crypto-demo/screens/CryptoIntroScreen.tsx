@@ -15,7 +15,7 @@ export const CryptoIntroScreen = () => {
       <TechIntro/>
 
       {/* Boton para ir a la pantalla principal */}
-      <ButtonProjects routeLink={'/flows/crypto-app/main-crypto'} titleBtn='Ver Demo en Vivo'/>
+      <ButtonProjects routeLink={'/flows/crypto/(tabs)'} titleBtn='Ver Demo en Vivo'/>
     </ScrollView>
   );
 };
