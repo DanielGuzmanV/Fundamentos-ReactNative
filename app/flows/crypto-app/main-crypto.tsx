@@ -1,5 +1,5 @@
 import { CryptoMainScreen } from "@/src/features/crypto-demo/screens/CryptoMainScreen";
 
-export default function Demo() {
+export default function MainCryptoDemo() {
   return <CryptoMainScreen/>
 }
