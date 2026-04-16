@@ -1,14 +1,52 @@
 import Colors from '@/src/constants/Colors';
 import { useColorScheme } from '@/src/core/hooks/useColorScheme';
-import { Text, View } from 'react-native';
+import React from 'react';
+import { RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
+import { ActionButtons } from '../components/ActionButtons';
+import { BalanceHeader } from '../components/BalanceHeader';
+import { useRefresh } from '../hooks/useRefresh';
 
 export const CryptoMainScreen = () => {
   const colorScheme = useColorScheme() ?? 'light';
-  const textColor = Colors[colorScheme].text;
-  
+  const theme = Colors[colorScheme];
+
+  // Estado para el refresh
+  const {onRefresh, refreshing} = useRefresh();
+
   return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{color: textColor}}>Pantalla principal de la demo 1</Text>
-        </View>
-      );
+    <View style={[styles.container, { backgroundColor: theme.background }]}>
+      <ScrollView 
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor={colorScheme === 'dark' ? '#FFFFFF' : '#0F172A'} 
+            colors={[colorScheme === 'dark' ? '#FFFFFF' : '#007AFF']}
+            progressBackgroundColor={colorScheme === 'dark' ? '#3e4d65' : '#FFFFFF'}
+          />
+        }
+      >
+        {/* 1. Sección de Balance Total */}
+        <BalanceHeader
+          balance="$45,231.80"
+          percentageChange="2.45"
+          isPositive={true}
+        />
+
+        {/* 2. Botones de Acción (Comprar, Enviar, etc.) */}
+        <ActionButtons/>
+
+        {/* 3. Lista de Seguimiento (Watchlist) */}
+        <View style={styles.listPlaceholder} />
+      </ScrollView>
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  scrollContent: { padding: 20 },
+  listPlaceholder: { flex: 1, height: 400, backgroundColor: '#a9b4ce', },
+});
