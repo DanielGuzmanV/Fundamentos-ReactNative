@@ -1,8 +1,8 @@
 import { ButtonProjects } from '@/src/shared/components/ButtonProjects';
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { HeaderIntro } from '../components/crypto-intro/HeaderIntro';
-import { TechIntro } from '../components/crypto-intro/TechIntro';
+import { HeaderIntro } from '../components/HeaderIntro';
+import { TechIntro } from '../components/TechIntro';
 
 export const CryptoIntroScreen = () => {
 
