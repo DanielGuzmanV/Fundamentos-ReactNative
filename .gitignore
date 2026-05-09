@@ -43,3 +43,6 @@ yarn-error.*
 
 # Fundamentos ReactNative
 fundamentos-reactnative.txt
+
+# API de coincap
+.env
