@@ -1,16 +1,19 @@
 import Colors from '@/src/constants/Colors';
 import { useColorScheme } from '@/src/core/hooks/useColorScheme';
 import React from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import { MOCK_WATCHLIST } from '../mocks/crypto-data';
-import { CryptoCurrency } from '../types/crypto';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useWatchlistData } from '../hooks/useWatchlistData';
+import { CoinData } from '../types/coinCap';
 
 // --- Sub-componente para cada fila ---
-const CryptoItem = ({ item }: { item: CryptoCurrency }) => {
+const CryptoItem = ({ item }: { item: CoinData }) => {
   const colorScheme = useColorScheme() ?? 'light';
   const theme = Colors[colorScheme];
-  
-  const isPositive = item.price_change_percentage_24h >= 0;
+
+  // Convertimos los strings de la api a numeros para la logica y formato
+  const price = parseFloat(item.priceUsd);
+  const change = parseFloat(item.changePercent24Hr);
+  const isPositive = change >= 0;
 
   return (
     <Pressable 
@@ -20,7 +23,11 @@ const CryptoItem = ({ item }: { item: CryptoCurrency }) => {
       ]}
     >
       <View style={styles.leftRow}>
-        <Image source={{ uri: item.image }} style={styles.coinImage} />
+        {/* Item rank */}
+        <View style={[styles.rankCircle, { backgroundColor: theme.tint }]}>
+          <Text style={styles.rankText}>{item.rank}</Text>
+        </View>
+
         <View>
           <Text style={[styles.coinName, { color: theme.text }]}>{item.name}</Text>
           <Text style={styles.coinSymbol}>{item.symbol.toUpperCase()}</Text>
@@ -29,13 +36,13 @@ const CryptoItem = ({ item }: { item: CryptoCurrency }) => {
 
       <View style={styles.rightRow}>
         <Text style={[styles.priceText, { color: theme.text }]}>
-          ${item.current_price.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+          ${price.toLocaleString('en-US', { minimumFractionDigits: 2 })}
         </Text>
         <Text style={[
           styles.changeText, 
           { color: isPositive ? '#22C55E' : '#EF4444' }
         ]}>
-          {isPositive ? '+' : ''}{item.price_change_percentage_24h.toFixed(2)}%
+          {isPositive ? '+' : ''}{change.toFixed(2)}%
         </Text>
       </View>
     </Pressable>
@@ -46,6 +53,17 @@ const CryptoItem = ({ item }: { item: CryptoCurrency }) => {
 export const Watchlist = () => {
   const colorScheme = useColorScheme() ?? 'light';
   const theme = Colors[colorScheme];
+  const { data: cryptoData, isLoading, isError, error } = useWatchlistData();
+
+  if (isLoading) {
+    // Mostrar Skeleton Loader (o un simple "Cargando...")
+    return <Text style={{ color: theme.text }}>Cargando favoritos...</Text>;
+  }
+
+  if (isError) {
+    // Mostrar mensaje de error
+    return <Text style={{ color: 'red' }}>Error: {error?.message}</Text>;
+  }
 
   return (
     <View style={styles.container}>
@@ -68,7 +86,7 @@ export const Watchlist = () => {
       </View>
 
       <View style={styles.list}>
-        {MOCK_WATCHLIST.map((coin) => (
+        {cryptoData?.map((coin) => (
           <CryptoItem key={coin.id} item={coin} />
         ))}
       </View>
@@ -109,11 +127,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 12,
   },
-  coinImage: {
+  rankCircle: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  rankText: {
+    color: '#393838',
+    fontSize: 16,
+    fontWeight: '700',
   },
   coinName: {
     fontSize: 16,
