@@ -26,7 +26,7 @@ return (
       <View style={styles.leftRow}>
         {/* Item rank */}
         <View style={[styles.rankCircle, { backgroundColor: theme.tint }]}>
-          <Text style={styles.rankText}>{item.rank}</Text>
+          <Text style={[styles.rankText, {color: theme.background}]}>{item.rank}</Text>
         </View>
 
         <View>
