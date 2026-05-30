@@ -11,9 +11,9 @@ import { WatchlistSkeleton } from './WatchlistSkeleton';
 export const Watchlist = () => {
   const colorScheme = useColorScheme() ?? 'light';
   const theme = Colors[colorScheme];
-  const { data: cryptoData, isLoading, isError, error } = useWatchlistData();
+  const { data: cryptoData, isLoading, isError, error, isFetching } = useWatchlistData();
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return (
     <View style={styles.container}>
       <Text style={[styles.title, { color: theme.text, marginBottom: 15 }]}>Favoritos</Text>

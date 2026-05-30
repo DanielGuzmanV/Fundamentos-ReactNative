@@ -1,5 +1,6 @@
 import Colors from '@/src/constants/Colors';
 import { useColorScheme } from '@/src/core/hooks/useColorScheme';
+import { useQueryClient } from '@tanstack/react-query';
 import React from 'react';
 import { RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
 import { ActionButtons } from '../components/ActionButtons';
@@ -11,8 +12,16 @@ export const CryptoMainScreen = () => {
   const colorScheme = useColorScheme() ?? 'light';
   const theme = Colors[colorScheme];
 
-  // Estado para el refresh
-  const {onRefresh, refreshing} = useRefresh();
+  // Obtener la instancia del cliente
+  const queryClient = useQueryClient();
+
+  // Estado para el refresh, marcando los datos como viejos y disparando una nueva peticion
+  const {onRefresh, refreshing} = useRefresh(async () => {
+    await queryClient.refetchQueries({
+      queryKey: ['watchlist'],
+      type: 'active', // Solo las que se están viendo
+    });
+  });
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
