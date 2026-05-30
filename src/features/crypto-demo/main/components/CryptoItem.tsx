@@ -14,7 +14,7 @@ export const CryptoItem = ({item}: Props) => {
     // Convertimos los strings de la api a numeros para la logica y formato
     const price = parseFloat(item.priceUsd);
     const change = parseFloat(item.changePercent24Hr);
-    const isPositive = change >= 0;
+    const isPositive = change > 0;
 
 return (
     <Pressable 

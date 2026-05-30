@@ -1,1 +1,1 @@
-export const WATCHLIST_IDS = ['bitcoin', 'ethereum', 'solana', 'dogecoin', 'tron'];
+export const WATCHLIST_IDS = ['bitcoin', 'tether', 'solana', 'dogecoin', 'tron'];
