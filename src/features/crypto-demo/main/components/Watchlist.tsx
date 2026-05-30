@@ -5,13 +5,15 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { WATCHLIST_IDS } from '../constants/FavoritesCoins';
 import { useWatchlistData } from '../hooks/useWatchlistData';
 import { CryptoItem } from './CryptoItem';
+import { EmptyWatchlist } from './EmptyWatchlist';
+import { ErrorWatchlist } from './ErrorWatchlist';
 import { WatchlistSkeleton } from './WatchlistSkeleton';
 
 // --- Componente Principal ---
 export const Watchlist = () => {
   const colorScheme = useColorScheme() ?? 'light';
   const theme = Colors[colorScheme];
-  const { data: cryptoData, isLoading, isError, error, isFetching } = useWatchlistData();
+  const { data: cryptoData, isLoading, isError, error, isFetching, refetch } = useWatchlistData();
 
   if (isLoading || isFetching) {
     return (
@@ -24,7 +26,21 @@ export const Watchlist = () => {
 
   if (isError) {
     // Mostrar mensaje de error
-    return <Text style={{ color: 'red' }}>Error: {error?.message}</Text>;
+    return (
+      <View>
+        <Text style={[styles.title, { color: theme.text, marginBottom: 15 }]}>Favoritos</Text>
+        <ErrorWatchlist errorMessage={error.message} onRetry={() => refetch()}/>
+      </View>
+    )
+  }
+
+  if(!cryptoData || cryptoData.length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={[styles.title, { color: theme.text, marginBottom: 15 }]}>Favoritos</Text>
+        <EmptyWatchlist />
+      </View>
+    );
   }
 
   return (
