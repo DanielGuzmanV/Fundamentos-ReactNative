@@ -26,21 +26,27 @@ export const ConceptHeader = ({ title, subtitle }: ConceptHeaderProps) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    marginBottom: 20,
-    paddingHorizontal: 5,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 15,
+    marginVertical: 25,
+    borderColor: '#9a97aa',
   },
   mainTitle: {
     fontSize: 28,
     fontWeight: 'bold',
+    marginBottom: 12
   },
   subTitle: {
-    fontSize: 16,
-    color: '#888',
-    marginTop: 4,
+    fontSize: 16, 
+    textAlign: 'center', 
+    color: '#666', 
+    lineHeight: 24, 
   },
   divider: {
     height: 4,
-    width: 50,
+    width: 100,
     backgroundColor: '#007AFF',
     marginTop: 10,
     borderRadius: 2,
