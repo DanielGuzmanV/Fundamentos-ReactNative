@@ -23,18 +23,21 @@ return (
         { backgroundColor: pressed ? theme.border : 'transparent' }
       ]}
     >
+      {/* Lado izquierdo de la card */}
       <View style={styles.leftRow}>
-        {/* Item rank */}
+        {/* Item rank - Numero */}
         <View style={[styles.rankCircle, { backgroundColor: theme.tint }]}>
           <Text style={[styles.rankText, {color: theme.background}]}>{item.rank}</Text>
         </View>
 
+        {/* Titulo y simbolo */}
         <View>
           <Text style={[styles.coinName, { color: theme.text }]}>{item.name}</Text>
           <Text style={styles.coinSymbol}>{item.symbol.toUpperCase()}</Text>
         </View>
       </View>
 
+      {/* Lado derecho de la card */}
       <View style={styles.rightRow}>
         <Text style={[styles.priceText, { color: theme.text }]}>
           ${price.toLocaleString('en-US', { minimumFractionDigits: 2 })}

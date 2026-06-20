@@ -13,6 +13,8 @@ export const BalanceHeader = ({balance, percentageChange, isPositive}: Props) =>
   
   return (
     <View style={styles.card}>
+
+      {/* Header superior de la card */}
       <View style={styles.headerRow}>
         <Text style={styles.title}>Balance Total</Text>
         <Pressable
@@ -31,6 +33,7 @@ export const BalanceHeader = ({balance, percentageChange, isPositive}: Props) =>
         </Pressable>
       </View>
 
+      {/* Dinero y badge */}
       <View style={styles.balanceRow}>
         <Text style={styles.balanceText}>
           {isVisible ? balance : '••••••'}
@@ -50,6 +53,7 @@ export const BalanceHeader = ({balance, percentageChange, isPositive}: Props) =>
         </View>
       </View>
 
+      {/* Dinero en las ultimas horas */}
       <Text style={styles.subtitle}>+$1,230.50 en las últimas 24h</Text>
     </View>
   )

@@ -18,7 +18,7 @@ export const Watchlist = () => {
   if (isLoading || isFetching) {
     return (
     <View style={styles.container}>
-      <Text style={[styles.title, { color: theme.text, marginBottom: 15 }]}>Favoritos</Text>
+      <Text style={[styles.title, { color: theme.text }]}>Favoritos</Text>
       <WatchlistSkeleton quantity={WATCHLIST_IDS.length}/>
     </View>
   );
@@ -28,7 +28,7 @@ export const Watchlist = () => {
     // Mostrar mensaje de error
     return (
       <View>
-        <Text style={[styles.title, { color: theme.text, marginBottom: 15 }]}>Favoritos</Text>
+        <Text style={[styles.title, { color: theme.text }]}>Favoritos</Text>
         <ErrorWatchlist errorMessage={error.message} onRetry={() => refetch()}/>
       </View>
     )
@@ -37,7 +37,7 @@ export const Watchlist = () => {
   if(!cryptoData || cryptoData.length === 0) {
     return (
       <View style={styles.container}>
-        <Text style={[styles.title, { color: theme.text, marginBottom: 15 }]}>Favoritos</Text>
+        <Text style={[styles.title, { color: theme.text }]}>Favoritos</Text>
         <EmptyWatchlist />
       </View>
     );
