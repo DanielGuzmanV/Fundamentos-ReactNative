@@ -1,4 +1,4 @@
-import CustomDrawerContent from '@/src/shared/components/CustomDrawerContent';
+import CustomDrawerContent from '@/src/shared/layout/CustomDrawerContent';
 import { Ionicons } from '@expo/vector-icons';
 import { Drawer } from 'expo-router/drawer';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

@@ -1,4 +1,4 @@
-import { Skeleton } from '@/src/shared/components/Skeleton';
+import { Skeleton } from '@/src/shared/Ui/Skeleton';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
