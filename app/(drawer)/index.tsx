@@ -1,23 +1,5 @@
-import { StyleSheet } from 'react-native';
-
-import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
+import { HomeScreen } from '@/src/features/home/screens/HomeScreen';
 
 export default function IndexScreen() {
-  return (
-    <ViewCustom style={styles.container}>
-      <TextCustom style={styles.title}>Tab One</TextCustom>
-    </ViewCustom>
-  );
+  return <HomeScreen/>
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
