@@ -5,7 +5,7 @@ import React from 'react';
 import { RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
 import { ActionButtons } from '../components/ActionButtons';
 import { BalanceHeader } from '../components/BalanceHeader';
-import { Watchlist } from '../components/Watchlist';
+import { WatchlistMarket } from '../components/WatchlistMarket';
 import { useRefresh } from '../hooks/useRefresh';
 
 export const CryptoMainScreen = () => {
@@ -49,7 +49,9 @@ export const CryptoMainScreen = () => {
         <ActionButtons/>
 
         {/* 3. Lista de Seguimiento (Watchlist) */}
-        <Watchlist/>
+        {/* <Watchlist/> */}
+        <WatchlistMarket/>
+
       </ScrollView>
     </View>
   );
