@@ -1,11 +1,26 @@
 import { TextCustom, ViewCustom } from "@/src/shared/components/Themed";
+import { useRouter } from "expo-router";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { ConceptCard } from "../components/ConceptCard";
 import { CONCEPTS_DATA } from "../data/concepts.data";
 import { ConceptDifficulty } from "../types/concept.types";
 
 export const HomeScreen = () => {
+  const router = useRouter();
+
   const handleSelectLevel = (levelId: ConceptDifficulty) => {
+    // Mapear el ID del nivel a la ruta correspondiente
+    const routes: Record<ConceptDifficulty, string> = {
+      basic: '/flows/concepts/basics',
+      intermediate: '/flows/concepts/intermediate',
+      advanced: '/flows/concepts/advanced'
+    }
+    
+    const targetRoute = routes[levelId];
+    if(targetRoute) {
+      router.push(targetRoute as any)
+    }
+
     console.log('Nivel seleccionado:', levelId);
   }
 
