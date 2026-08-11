@@ -2,7 +2,7 @@ import { ConceptLevel } from "../../types/concept.types";
 
 export const basicConcepts: ConceptLevel = {
   id: 'basic',
-  title: 'Conceptos Básicos de React Native',
+  title: 'Conceptos Básicos',
   iconName: 'book-outline',
   description: 'Fundamentos del framework, componentes nativos base, props, estado y renderizado elemental.',
   items: [

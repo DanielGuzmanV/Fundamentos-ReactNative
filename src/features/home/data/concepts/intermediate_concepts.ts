@@ -2,7 +2,7 @@ import { ConceptLevel } from "../../types/concept.types";
 
 export const intermediateConcepts: ConceptLevel = {
   id: 'intermediate',
-  title: 'Conceptos Intermedios de React Native',
+  title: 'Conceptos Intermedios',
   iconName: 'code-working-outline',
   description: 'Gestión de datos asíncronos, referencias, context global, navegación avanzada y formularios.',
   items: [

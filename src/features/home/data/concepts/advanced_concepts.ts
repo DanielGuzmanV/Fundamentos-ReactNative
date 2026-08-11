@@ -2,7 +2,7 @@ import { ConceptLevel } from "../../types/concept.types";
 
 export const advancedConcepts: ConceptLevel = {
   id: 'advanced',
-  title: 'Conceptos Avanzados de React Native',
+  title: 'Conceptos Avanzados',
   iconName: 'hardware-chip-outline',
   description: 'Arquitectura interna, rendimiento de alto nivel, módulos nativos, animaciones y despliegue.',
   items: [
