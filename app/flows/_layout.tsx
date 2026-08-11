@@ -17,20 +17,14 @@ export default function FlowsLayout() {
           name="crypto/(tabs)"
           options={{title: 'Crypto-Dashboard'}}
         />
-
         <Stack.Screen
-          name="concepts/basics/index"
-          options={{title: 'Conceptos Basicos'}}
+          name="concepts/[level]/index"
+          options={{title: 'Cargando nivel'}}
         />
 
         <Stack.Screen
-          name="concepts/intermediate/index"
-          options={{title: 'Conceptos Intermedios'}}
-        />
-
-        <Stack.Screen
-          name="concepts/advanced/index"
-          options={{title: 'Conceptos Avanzados'}}
+          name="concepts/[level]/[id]"
+          options={{title: 'Leccion'}}
         />
 
       </Stack>
