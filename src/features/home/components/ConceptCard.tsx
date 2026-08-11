@@ -1,17 +1,12 @@
 import { TextCustom, ViewCustom } from "@/src/shared/components/Themed";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable, StyleSheet, View } from "react-native";
+import { LEVEL_COLORS } from "../helper/colors";
 import { ConceptDifficulty, ConceptLevel } from "../types/concept.types";
 
 interface ConceptCardProps {
   level: ConceptLevel;
   onPress: (levelId: ConceptDifficulty) => void;
-}
-
-const LEVEL_COLORS: Record<ConceptDifficulty, string> = {
-  basic: '#34C759',
-  intermediate: '#FF9500',
-  advanced: '#FF3B30',
 }
 
 export const ConceptCard = ({level, onPress}: ConceptCardProps) => {
