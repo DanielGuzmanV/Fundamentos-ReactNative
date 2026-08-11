@@ -9,18 +9,7 @@ export const HomeScreen = () => {
   const router = useRouter();
 
   const handleSelectLevel = (levelId: ConceptDifficulty) => {
-    // Mapear el ID del nivel a la ruta correspondiente
-    const routes: Record<ConceptDifficulty, string> = {
-      basic: '/flows/concepts/basics',
-      intermediate: '/flows/concepts/intermediate',
-      advanced: '/flows/concepts/advanced'
-    }
-    
-    const targetRoute = routes[levelId];
-    if(targetRoute) {
-      router.push(targetRoute as any)
-    }
-
+    router.push(`/flows/concepts/${levelId}` as any);
     console.log('Nivel seleccionado:', levelId);
   }
 
