@@ -1,7 +1,9 @@
+import { NotFoundComponent } from '@/src/shared/components/NotFoundComponent';
 import { TextCustom, ViewCustom } from '@/src/shared/components/Themed';
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { CONCEPTS_DATA } from '../data/concepts.data';
+import { LESSON_COMPONENTS } from '../mappers/lessonMapper';
 
 interface Props {
   levelId: string;
@@ -14,6 +16,17 @@ export const ConceptDetailScreen = ({ levelId, conceptId }: Props) => {
 
   // 2. Buscamos el tema específico dentro de sus items
   const concept = levelBlock?.items.find((item) => item.id === conceptId);
+
+  if(!concept){
+    return (
+      // Mejorar la seccion o realizar un componente independiente
+      <View>
+        <Text>Contenido no disponible para esta lección.</Text>
+      </View>
+    );
+  }
+
+  const ComponentLesson = LESSON_COMPONENTS[conceptId];
 
   return (
     <ViewCustom style={styles.container}>
@@ -28,9 +41,12 @@ export const ConceptDetailScreen = ({ levelId, conceptId }: Props) => {
 
         {/* Espacio preparado para renderizar el componente o código de la lección */}
         <ViewCustom style={styles.placeholderBox}>
-          <TextCustom style={styles.placeholderText}>
-            Nivel: "{levelId}" | Lección: "{conceptId}"
-          </TextCustom>
+          {ComponentLesson ? (
+            <ComponentLesson/>
+          ): (
+            // Mejorar la seccion o realizar un componente independiente
+            <NotFoundComponent/>
+          )}
         </ViewCustom>
       </ScrollView>
     </ViewCustom>
