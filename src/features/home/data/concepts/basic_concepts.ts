@@ -12,6 +12,22 @@ export const basicConcepts: ConceptLevel = {
       description: 'Sintaxis similar a HTML dentro de JS, pero utilizando elementos nativos de móvil como <View> y <Text> instead de <div> y <p>.',
     },
     {
+      id: 'native-components',
+      title: 'Componentes Nativos Primarios',
+      description: 'Equivalencias básicas de UI: <View>, <Text>, <Image>, <Button>, <ScrollView>, <Pressable>.',
+    },
+    {
+      id: 'pressable',
+      title: 'Pressable',
+      description: 'Componente contenedor moderno y altamente personalizable para capturar eventos de presión.',
+    },
+    {
+      id: 'styles',
+      title: 'Estilos con StyleSheet',
+      description: 'Objetos JavaScript en lugar de CSS tradicional para dar formato a los componentes.',
+      codeExample: 'const styles = StyleSheet.create({ container: { backgroundColor: "white", padding: 10 } });',
+    },
+    {
       id: 'components',
       title: 'Componentes',
       description: 'Bloques de UI reutilizables. Se organizan principalmente en funcionales.',
@@ -49,25 +65,9 @@ export const basicConcepts: ConceptLevel = {
       description: 'Uso de useState, useEffect para ciclo de vida/efectos secundarios y hooks nativos de React.',
     },
     {
-      id: 'native-components',
-      title: 'Componentes Nativos Primarios',
-      description: 'Equivalencias básicas de UI: <View>, <Text>, <Image>, <Button>, <ScrollView>, <Pressable>.',
-    },
-    {
-      id: 'styles',
-      title: 'Estilos con StyleSheet',
-      description: 'Objetos JavaScript en lugar de CSS tradicional para dar formato a los componentes.',
-      codeExample: 'const styles = StyleSheet.create({ container: { backgroundColor: "white", padding: 10 } });',
-    },
-    {
       id: 'expo-router',
       title: 'Expo Router',
       description: 'Estándar moderno de navegación basado en la estructura de archivos y carpetas.',
-    },
-    {
-      id: 'pressable',
-      title: 'Pressable',
-      description: 'Componente contenedor moderno y altamente personalizable para capturar eventos de presión.',
     },
   ],
 }

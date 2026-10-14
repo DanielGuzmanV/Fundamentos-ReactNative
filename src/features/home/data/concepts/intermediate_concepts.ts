@@ -7,6 +7,11 @@ export const intermediateConcepts: ConceptLevel = {
   description: 'Gestión de datos asíncronos, referencias, context global, navegación avanzada y formularios.',
   items: [
     {
+      id: 'useeffect',
+      title: 'useEffect y Ciclo de Vida',
+      description: 'Manejo Asíncrono / Fetching y Ciclo de Vida (Sincronización, temporizadores, eventos de pantalla).',
+    },
+    {
       id: 'useref',
       title: 'useRef y Referencias',
       description: 'Acceso directo a instancias de componentes (inputs, scroll) y persistencia de valores sin provocar re-renders.',
