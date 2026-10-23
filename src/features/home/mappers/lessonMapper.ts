@@ -5,15 +5,17 @@ import NativeComponentsScreen from "../screens/lessons/basic/NativeComponentsScr
 import PressableScreen from "../screens/lessons/basic/PressableScreen";
 import PropsScreen from "../screens/lessons/basic/PropsScreen";
 import StateScreen from "../screens/lessons/basic/StateScreen";
+import StylesScreen from "../screens/lessons/basic/StylesScreen";
 
 export const LESSON_COMPONENTS: Record<string, ComponentType> = {
   // lecciones de conceptos basicos:
   "jsx": JsxMobileScreen,
   "native-components": NativeComponentsScreen,
   "pressable": PressableScreen,
+  "styles": StylesScreen,
   "components": ComponentsScreen,
   "props": PropsScreen,
-  "state": StateScreen
+  "state": StateScreen,
   
   // Lecciones de conceptos intermedios:
 
